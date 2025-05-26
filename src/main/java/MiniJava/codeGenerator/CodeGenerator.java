@@ -20,12 +20,17 @@ public class CodeGenerator {
     private SymbolTable symbolTable;
 
     public CodeGenerator() {
-        symbolTable = new SymbolTable(memory);
+        symbolTable = new SymbolTable(getMemory());
         //TODO
     }
 
+    // Getter for memory
+    private Memory getMemory() {
+        return memory;
+    }
+
     public void printMemory() {
-        memory.pintCodeBlock();
+        getMemory().pintCodeBlock();
     }
 
     public void semanticFunction(int func, Token next) {
@@ -136,12 +141,11 @@ public class CodeGenerator {
     }
 
     private void defMain() {
-        //ss.pop();
-        memory.add3AddressCode(ss.pop().num, Operation.JP, new Address(memory.getCurrentCodeBlockAddress(), varType.Address), null, null);
+        getMemory().add3AddressCode(ss.pop().num, Operation.JP, new Address(getMemory().getCurrentCodeBlockAddress(), varType.Address), null, null);
         String methodName = "main";
         String className = symbolStack.pop();
 
-        symbolTable.addMethod(className, methodName, memory.getCurrentCodeBlockAddress());
+        symbolTable.addMethod(className, methodName, getMemory().getCurrentCodeBlockAddress());
 
         symbolStack.push(className);
         symbolStack.push(methodName);
@@ -299,14 +303,14 @@ public class CodeGenerator {
     }
 
     public void add() {
-        Address temp = new Address(memory.getTemp(), varType.Int);
+        Address temp = new Address(getMemory().getTemp(), varType.Int);
         Address s2 = ss.pop();
         Address s1 = ss.pop();
 
         if (s1.varType != varType.Int || s2.varType != varType.Int) {
             ErrorHandler.printError("In add two operands must be integer");
         }
-        memory.add3AddressCode(Operation.ADD, s1, s2, temp);
+        getMemory().add3AddressCode(Operation.ADD, s1, s2, temp);
         ss.push(temp);
     }
 

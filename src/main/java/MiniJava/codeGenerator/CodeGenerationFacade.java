@@ -16,4 +16,9 @@ public class CodeGenerationFacade {
     public void printGeneratedCode() {
         codeGenerator.printMemory();
     }
+
+    // Getter for CodeGenerator
+    public CodeGenerator getCodeGenerator() {
+        return codeGenerator;
+    }
 }
