@@ -16,13 +16,15 @@ public abstract class LogicalStrategy implements OperationStrategy {
 
     /**
      * Get the operation type
+     *
      * @return operation type
      */
     protected abstract Operation getOperation();
 
     /**
      * Check if operation has single operand
+     *
      * @return true if operation has single operand
      */
     protected abstract boolean isSingleOperand();
-} 
+}

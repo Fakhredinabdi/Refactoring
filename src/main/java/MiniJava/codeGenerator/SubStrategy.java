@@ -8,4 +8,4 @@ public class SubStrategy extends ArithmeticStrategy {
     protected Operation getOperation() {
         return Operation.SUB;
     }
-} 
+}

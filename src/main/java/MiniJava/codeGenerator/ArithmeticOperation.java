@@ -45,4 +45,4 @@ class MultOperation extends ArithmeticOperation {
     protected Operation getOperation() {
         return Operation.MULT;
     }
-} 
+}

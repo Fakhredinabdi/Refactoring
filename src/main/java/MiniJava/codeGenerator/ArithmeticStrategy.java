@@ -16,7 +16,8 @@ public abstract class ArithmeticStrategy implements OperationStrategy {
 
     /**
      * Get the operation type
+     *
      * @return operation type
      */
     protected abstract Operation getOperation();
-} 
+}

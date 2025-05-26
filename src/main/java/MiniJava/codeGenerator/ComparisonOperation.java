@@ -5,6 +5,7 @@ package MiniJava.codeGenerator;
  */
 public abstract class ComparisonOperation implements OperationStrategy {
     protected abstract Operation getOperation();
+
     protected abstract boolean requiresIntOperands();
 
     @Override
@@ -50,4 +51,4 @@ class LessThanOperation extends ComparisonOperation {
     protected boolean requiresIntOperands() {
         return true;
     }
-} 
+}
