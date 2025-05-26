@@ -8,4 +8,4 @@ public class AddStrategy extends ArithmeticStrategy {
     protected Operation getOperation() {
         return Operation.ADD;
     }
-} 
+}

@@ -16,9 +16,14 @@ public class SymbolOperations {
 
     /**
      * Query method: Check if a symbol exists
-     * @param className class name
-     * @param methodName method name
-     * @param symbolName symbol name
+     *
+     * @param className
+     *            class name
+     * @param methodName
+     *            method name
+     * @param symbolName
+     *            symbol name
+     *
      * @return true if symbol exists
      */
     public boolean hasSymbol(String className, String methodName, String symbolName) {
@@ -32,9 +37,14 @@ public class SymbolOperations {
 
     /**
      * Query method: Get symbol information without modifying state
-     * @param className class name
-     * @param methodName method name
-     * @param symbolName symbol name
+     *
+     * @param className
+     *            class name
+     * @param methodName
+     *            method name
+     * @param symbolName
+     *            symbol name
+     *
      * @return Symbol object if found, null otherwise
      */
     public Symbol getSymbol(String className, String methodName, String symbolName) {
@@ -47,8 +57,12 @@ public class SymbolOperations {
 
     /**
      * Query method: Get method symbol without modifying state
-     * @param className class name
-     * @param methodName method name
+     *
+     * @param className
+     *            class name
+     * @param methodName
+     *            method name
+     *
      * @return Symbol object if found, null otherwise
      */
     public Symbol getMethodSymbol(String className, String methodName) {
@@ -61,8 +75,12 @@ public class SymbolOperations {
 
     /**
      * Query method: Get method address without modifying state
-     * @param className class name
-     * @param methodName method name
+     *
+     * @param className
+     *            class name
+     * @param methodName
+     *            method name
+     *
      * @return method address if found, -1 otherwise
      */
     public int getMethodAddress(String className, String methodName) {
@@ -76,9 +94,13 @@ public class SymbolOperations {
 
     /**
      * Modifier method: Add a new method to the symbol table
-     * @param className class name
-     * @param methodName method name
-     * @param address method address
+     *
+     * @param className
+     *            class name
+     * @param methodName
+     *            method name
+     * @param address
+     *            method address
      */
     public void addMethod(String className, String methodName, int address) {
         symbolTable.addMethod(className, methodName, address);
@@ -86,7 +108,9 @@ public class SymbolOperations {
 
     /**
      * Modifier method: Add a new class to the symbol table
-     * @param className class name
+     *
+     * @param className
+     *            class name
      */
     public void addClass(String className) {
         symbolTable.addClass(className);
@@ -94,8 +118,11 @@ public class SymbolOperations {
 
     /**
      * Modifier method: Add a new field to a class
-     * @param className class name
-     * @param fieldName field name
+     *
+     * @param className
+     *            class name
+     * @param fieldName
+     *            field name
      */
     public void addField(String className, String fieldName) {
         symbolTable.addField(className, fieldName);
@@ -163,4 +190,4 @@ public class SymbolOperations {
     public void setLastType(SymbolType type) {
         symbolTable.setLastType(type);
     }
-} 
+}

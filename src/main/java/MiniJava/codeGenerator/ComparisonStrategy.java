@@ -19,5 +19,6 @@ public abstract class ComparisonStrategy implements OperationStrategy {
     }
 
     protected abstract Operation getOperation();
+
     protected abstract boolean requiresIntOperands();
-} 
+}

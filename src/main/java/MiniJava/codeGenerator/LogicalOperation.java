@@ -5,6 +5,7 @@ package MiniJava.codeGenerator;
  */
 public abstract class LogicalOperation implements OperationStrategy {
     protected abstract Operation getOperation();
+
     protected abstract boolean isSingleOperand();
 
     @Override
@@ -46,4 +47,4 @@ class NotOperation extends LogicalOperation {
     protected boolean isSingleOperand() {
         return true;
     }
-} 
+}

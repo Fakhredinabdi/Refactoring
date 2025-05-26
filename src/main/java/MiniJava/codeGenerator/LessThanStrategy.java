@@ -13,4 +13,4 @@ public class LessThanStrategy extends ComparisonStrategy {
     protected boolean requiresIntOperands() {
         return true;
     }
-} 
+}

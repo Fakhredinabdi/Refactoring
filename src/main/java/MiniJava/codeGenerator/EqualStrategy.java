@@ -13,4 +13,4 @@ public class EqualStrategy extends ComparisonStrategy {
     protected boolean requiresIntOperands() {
         return false;
     }
-} 
+}

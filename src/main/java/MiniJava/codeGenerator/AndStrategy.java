@@ -13,4 +13,4 @@ public class AndStrategy extends LogicalStrategy {
     protected boolean isSingleOperand() {
         return false;
     }
-} 
+}
