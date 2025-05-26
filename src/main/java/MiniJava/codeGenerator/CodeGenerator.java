@@ -7,6 +7,9 @@ import MiniJava.semantic.symbol.Symbol;
 import MiniJava.semantic.symbol.SymbolTable;
 import MiniJava.semantic.symbol.SymbolType;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -18,10 +21,11 @@ public class CodeGenerator {
     private Stack<String> symbolStack = new Stack<>();
     private Stack<String> callStack = new Stack<>();
     private SymbolTable symbolTable;
+    private final ArrayList<String> instructions;
 
     public CodeGenerator() {
         symbolTable = new SymbolTable(getMemory());
-        //TODO
+        instructions = new ArrayList<>();
     }
 
     // Getter for memory
@@ -496,5 +500,18 @@ public class CodeGenerator {
 
     public void main() {
 
+    }
+
+    // Encapsulate the collection
+    public void addInstruction(String instruction) {
+        instructions.add(instruction);
+    }
+
+    public void removeInstruction(String instruction) {
+        instructions.remove(instruction);
+    }
+
+    public List<String> getInstructions() {
+        return Collections.unmodifiableList(instructions); // Return an unmodifiable view
     }
 }
